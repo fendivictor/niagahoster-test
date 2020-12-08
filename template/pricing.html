@@ -1,0 +1,69 @@
+<div class="container" id="pricing">
+  <h3 class="text-center">Paket Hosting Singapura yang Tepat</h3>
+  <h4 class="text-center">Diskon 40% + Domain dan SSL Gratis untuk Anda</h4>
+  <div class="row mt-5">
+    {% for row in price %}
+      <div class="col-lg-3 col-sm-6 p-0">
+        <div class="
+        {% if row.best == 1 %}
+         pricing-table-active
+        {% else %}
+         pricing-table
+        {% endif %}">
+
+        {% if row.best == 1 %}
+          <div class="ribbon ribbon-top-left">
+            <span>BEST SELLER!</span>
+          </div>
+        {% endif %}
+
+          <div class="
+          {% if row.best == 1 %}
+            pricing-title-active
+          {% else %}
+            pricing-title
+          {% endif %}">
+            {{ row.service }}
+          </div>
+          <div class="
+          {% if row.best == 1 %}
+            pricing-price-active
+          {% else %}
+            pricing-price
+          {% endif %}">
+            <div class="price-discount">
+              {{ row.price }}
+            </div>
+            <div class="price-real">
+              Rp <span class="price-big">
+                {{ row.discount.big }}
+              </span>
+              <span class="text-bold">
+                .{{ row.discount.small }}
+              </span>/ bln
+            </div>
+          </div>
+          <div class="
+          {% if row.best == 1 %}
+            pricing-user-active
+          {% else %}
+            pricing-user
+          {% endif %}">
+            <span class="text-bold">{{ row.user }}</span>  Pengguna Terdaftar
+          </div>
+          <div class="pricing-desc">
+            {{ row.description | raw }}
+            <div class="
+            {% if row.best == 1 %}
+              pricing-btn-active
+            {% else %}
+              pricing-btn
+            {% endif %}">
+              <button type="button">Pilih Sekarang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
